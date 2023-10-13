@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Formulir Catatan Keuangan</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Catatan Keuangan</h1>
+        <form action="/tambah" method="post">
+            <div class="form-group">
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="harga">Harga</label>
+                <input type="number" id="harga" name="harga" required>
+            </div>
+            <div class="form-group">
+                <label for="tanggal">Tanggal</label>
+                <input type="date" id="tanggal" name="tanggal" required>
+            </div>
+            <button type="submit">Tambah</button>
+        </form>
+        <h2>Daftar Catatan Keuangan</h2>
+        <ul class="item-list">
+            <% items.forEach(item => { %>
+                <li><%= item.nama %> - <%= item.harga %> - <%= item.tanggal %></li>
+            <% }); %>
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
